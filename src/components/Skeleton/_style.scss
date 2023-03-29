@@ -1,0 +1,99 @@
+.lig-skeleton{
+    overflow: hidden;
+    
+}
+.lig-skeleton-line {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 20px;
+  background-color: $gray-200 !important;
+  border-radius: 3px;
+  color: $orange !important;
+  margin: 5px 0px;
+  &::after {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    width: 80%;
+    height: 100%;
+    background: linear-gradient(
+        to left,
+        rgb(235, 231, 231),
+        #fff,
+        rgb(235, 231, 231)
+      )
+      0 0 no-repeat;
+    content: '';
+    animation: shineMove 2s infinite;
+    transform: skewX(-45deg);
+    opacity: 0.2;
+  }
+}
+.lig-skeleton-img {
+  position: relative;
+  overflow: hidden;
+  width: 50px;
+  height: 50px;
+  
+  background-color: $gray-200 !important;
+  border-radius: 50%;
+  color: $orange !important;
+  margin: 5px 0px;
+  &::after {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    width: 80%;
+    height: 100%;
+    background: linear-gradient(
+        to left,
+        rgb(235, 231, 231),
+        #fff,
+        rgb(235, 231, 231)
+      )
+      0 0 no-repeat;
+    content: '';
+    animation: shineMove 2s infinite;
+    transform: skewX(-45deg);
+    opacity: 0.2;
+  }
+}
+
+
+
+@keyframes shineMove {
+  0% {
+    left: -200%;
+  }
+  100% {
+    left: 200%;
+  }
+}
+
+.content1 {
+  width: 50px;
+  height: 50px;
+  background-color: $blue;
+  .content1-child{
+    width: 50px;
+  height: 50px;
+  background-color: $blue;
+  }
+}
+
+.content2 {
+  margin-top: 10px;
+  width: 100px;
+  height: 30px;
+  background-color: $blue;
+
+}
+
+.content3 {
+  margin-top: 10px;
+  width: 200px;
+  height: 30px;
+  background-color: $blue;
+
+}

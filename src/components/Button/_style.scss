@@ -1,0 +1,129 @@
+@mixin btn($backgroundColor, $border, $color, $activeborder) {
+  background-color: $backgroundColor;
+  color: $color;
+  border: $border;
+
+  &:active {
+    top: 2px;
+    border: 1px $activeborder solid;
+    color: $activeborder;
+  }
+}
+@mixin btntype($backgroundColor, $border, $color, $activeborder) {
+  background-color: $backgroundColor;
+  color: $color;
+  border: $border;
+
+  &:active {
+    top: 2px;
+    border: 1px $backgroundColor solid;
+    color: $activeborder;
+  }
+}
+
+.lig-btn {
+  display: inline-block;
+  position: relative;
+  outline: none;
+  font-weight: 400;
+  user-select: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all .1s linear;
+  box-sizing: border-box;
+  width: fit-content;
+  height: fit-content;
+  padding: 7px;
+  border-radius: 3px;
+
+  
+  &.lg {
+    padding: 0 19px;
+    font-size: 14px;
+    height: 36px;
+  }
+
+  &.sm {
+    padding: 0 6px;
+    font-size: 12px;
+    height: 24px;
+
+  }
+
+  &.circle {
+    width: 80px;
+    height: 32px;
+    padding: 0;
+    text-align: center;
+    border-radius: 20px;
+  }
+  &.square {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    text-align: center;
+    
+  }
+  &.round {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    text-align: center;
+    border-radius: 50%;
+  }
+
+  &.info{
+    @include btntype($blue, $btn-border-opcity, white, white)
+
+  }
+   
+
+  &.default {
+    @include btn($white, $gray-400 solid 1px, black, $blue);
+  }
+
+  &.link {
+    background-color: white;
+    color: $blue;
+    border: $btn-border-opcity;
+
+    &:active {
+      top: 2px;
+      border: 1px $opcity solid;
+      color: $blue;
+    }
+  }
+
+  &.danger {
+    @include btntype($red, $btn-border-opcity, white, white)
+  }
+
+  &.primary {
+    @include btntype($blue, $btn-border-opcity, white, white)
+  }
+
+  &:active {
+    top: 2px;
+  }
+
+  &.success{
+    @include btntype($green, $btn-border-opcity, white, white)
+  }
+  &.warning{
+    @include btntype($orange, $btn-border-opcity, white, white)
+  }
+
+  &.disabled {
+    background-color: $white;
+    color: $gray-400;
+    border: $gray-400 solid 1px;
+    cursor: no-drop;
+
+    &:active {
+      top: 0;
+      border: $gray-400 solid 1px;
+      color: $gray-400;
+    }
+  }
+
+}

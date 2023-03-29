@@ -1,0 +1,37 @@
+$Card-bordercolor : rgba(212, 212, 212, 0);
+
+.lig-card{
+    width: 98%;
+    margin:3rem 2rem ;
+    border-radius: 10px;
+
+    .card-head{
+        height: 30%;
+        width: 100%;
+        padding: 1.5rem;
+        border-bottom: 1px solid rgba(241, 241, 241, 0.514);
+        background-color: white;
+        display: flex;
+        align-items: center;
+        font-weight: 600;
+       color: rgb(126, 126, 126);
+    }
+    .card-content{
+        height: 70%;
+        width: 100%;
+        padding: 1rem 2rem;
+        border: 1px solid $Card-bordercolor;
+        background-color: white;
+        align-items: center;
+        border-top: none;
+    }
+}
+
+.card-contents{
+    padding: 1rem 2rem;
+    background-color: rgba(240, 240, 240, 0.541);
+    color: black;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+}

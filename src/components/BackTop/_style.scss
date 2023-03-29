@@ -1,0 +1,33 @@
+.lig-backTop{
+    background-color: rgba(0, 0, 0, 0.616);
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    top: 80%;
+    left: 80%;
+    opacity: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10000;
+    transition: 0.3s ;
+    .Back-Icon{
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+    }
+    &.show{
+        opacity: 1;
+    }
+
+}
+
+.BackTop-content{
+    height: 1000px;
+    display: flex;
+    flex-direction: column;
+    color: $blue;
+}
+
+ 

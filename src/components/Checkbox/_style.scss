@@ -1,0 +1,34 @@
+.lig-checkbox{
+    cursor: pointer;
+    display: flex;
+    align-content: center;
+    user-select: none;
+    width: fit-content;
+    &.disabled{
+        cursor: no-drop;
+        input{
+        cursor: no-drop;
+        }
+    }
+    input{
+        border-radius: 2px;
+        margin: 0 10px ;
+        margin-left: 0;
+    }
+}
+
+.checkbox-Group{
+    &.horizontal{
+        display: flex;
+        align-content: center;
+    }
+    .lig-checkbox{
+        margin: 0 10px ;
+        margin-left: 0;
+    }
+    &.vertical{
+        display: flex;
+        align-content: center;
+        flex-direction: column;
+    }
+}

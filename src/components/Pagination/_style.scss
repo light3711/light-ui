@@ -1,0 +1,116 @@
+$PliLiWidthHeight: 45px;
+
+.lig-pagination {
+   display: flex;
+   height: 30px;
+   user-select: none;
+    .pa-inner {
+        list-style: none;
+        display: flex;
+        height: 100%;
+
+        .pa-control{
+            border-radius: 0.2rem;
+            width: 30px;
+            height: 100%;
+            background-color: white;
+            color: $gray-500;
+            border: 1px solid rgba($color: $gray-200, $alpha: 1);
+            margin: 0 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            &.nomore{
+                color: $gray-300;
+                cursor: no-drop;
+                
+            }
+
+        }
+        .jumper{
+            border-radius: 0.2rem;
+            height: 100%;
+            background-color: white;
+            color: $gray-600;
+            margin: 0 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            white-space: nowrap;
+        }
+
+
+        .pa-option{
+            border-radius: 0.2rem;
+            width: 30px;
+            height: 100%;
+            background-color: white;
+            color: $gray-800;
+            border: 1px solid rgba($color: $gray-200, $alpha: 1);
+            margin: 0 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            &:hover{
+                background-color: $gray-100;
+            }
+            &.active{
+            border: 1px solid rgba($color: $blue, $alpha: 0.1);
+            color: rgba($color: $blue, $alpha: 1.0);
+            background-color: rgba($color: $blue, $alpha: 0.1);
+
+            }
+        }
+
+
+        .pa-input{
+            width: 3rem;
+            margin-right: 3px;
+        }
+        .pa-select{
+            width: 5rem;
+            margin-right: 3px;
+        }
+
+    }
+
+}
+
+.pa-control{
+    border-radius: 0.2rem;
+    width: 30px;
+    height: 100%;
+    background-color: white;
+    color: $gray-500;
+    border: 1px solid rgba($color: $gray-200, $alpha: 1);
+    margin: 0 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    &.nomore{
+        color: $gray-300;
+        cursor: no-drop;
+        
+    }
+    &.mini{
+    margin: 0;
+    border:none;
+        
+    }
+
+}
+.mini-pagination{
+    width: fit-content;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.p-mini-input{
+    width: 30px;
+    margin: 0 5px;
+    text-align: center;
+}

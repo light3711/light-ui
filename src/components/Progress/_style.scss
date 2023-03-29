@@ -1,0 +1,26 @@
+.lig-progress {
+    background-color: $gray-200;
+    border-radius: 2px;
+    transition: 0.3s;
+    margin:  5px 0;
+    height: 3px;
+    .lig-progress-outer {}
+
+}
+
+.progress-inner-color-primary {
+    background-color: rgba($color: $blue, $alpha: 0.8);
+    border-radius: 2px;
+    transition: 0.3s;
+    height: 3px;
+
+}
+
+.progress-text {
+    font-size: 5px;
+    font-weight: 400;
+    color: white;
+    padding-left: 5px;
+}
+
+ 

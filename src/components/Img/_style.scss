@@ -1,0 +1,101 @@
+.css-1a6uu8c{
+    margin: 100px !important ;
+}
+.lig-img{
+    img{
+   cursor: pointer;
+
+    }
+}
+
+.img-wrapper{
+    width: 300px;
+    height: 400px;
+}
+
+.img-dark{
+    background-color: rgba(0, 0, 0, 0.507);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    animation: dark 0.8s  ;
+    z-index: 10;
+}
+
+.preciew-img{
+   z-index: 20;
+   object-fit: cover;
+   width: 600px;
+   height: 800px;
+   position: fixed;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   transition: 0.5s;
+   margin: auto;
+
+}
+
+.preview-container{
+    animation: imganimation 0.8s ;
+}
+
+
+.preview-control{
+    .preview-control-ul{
+        z-index: 21;
+        position: fixed;
+        right: 20px;
+        top: 20px;
+        display: flex;
+    
+        .preview-control-icon{
+            color: rgb(226, 223, 223);
+            cursor: pointer;
+            display: block;
+            margin: 20px;
+        }
+    }
+
+}
+
+.img-leftClick{
+    color: rgb(226, 223, 223);
+            cursor: pointer;
+            display: block;
+            margin: 10px;
+            z-index: 23;
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30px;
+            font-size: 50px;
+            left: 10%;
+}
+.img-rightClick{
+    color: rgb(226, 223, 223);
+            cursor: pointer;
+            display: block;
+            margin: 10px;
+            z-index: 23;
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30px;
+            right: 10%;
+            font-size: 50px;
+}
+
+
+@keyframes imganimation {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}

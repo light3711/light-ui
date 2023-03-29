@@ -1,0 +1,45 @@
+.lig-message{
+    display: inline-block;
+    width: fit-content;
+    span{
+      margin: 0 3.5px;
+    }
+    padding: 10px 16px;
+    margin-bottom: 10px;
+    background: #fff;
+    border-radius: 2px;
+    box-shadow: 0 3px 6px -4px rgba(192, 192, 192, 0.103) ;
+    pointer-events: all;
+    border-radius: 6px;
+    box-shadow: 1px 2px 3px 4px rgba(179, 179, 179, 0.096);
+    transition: all .2s ease ;
+    animation:show .3s;
+    &.hidden{
+      color: rgba(255, 255, 255, 0);
+      opacity: 0;
+      margin: 0;
+      padding: 0;
+      height: 0;
+    }
+    // position: fixed;
+
+}
+
+@keyframes show{
+    0% {
+      opacity: 0;
+      transform: translateY(20px)
+    }
+    100% {
+      opacity: 1;
+      transform: translate(0)
+    }
+  }
+
+
+
+ 
+
+
+
+ 

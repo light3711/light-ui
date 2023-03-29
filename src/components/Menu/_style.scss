@@ -1,0 +1,262 @@
+ //sub-menu
+ //submenu
+ $submenu-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .12), 0 0 6px 0 rgba(0, 0, 0, .04);
+
+ .lig-menu {
+   width: 100%;
+   display: flex;
+   background-color: white;
+
+   .menuItem {
+     &.onlyMenuItem {
+       position: relative;
+       transition: 0.2s;
+       background-color: white;
+       cursor: pointer;
+       display: flex;
+       justify-content: space-around;
+       align-items: center;
+       padding: 10px;
+       border-radius: 5px;
+       margin: 5px 10px;
+       user-select: none;
+       &.active {
+         color: $blue;
+         background-color: $gray-100;
+       }
+
+       .line {
+         background-color: transparent;
+         width: 60%;
+         height: 3px;
+         position: absolute;
+         bottom: -2px;
+         right: 50%;
+         transform: translateX(50%);
+
+         &.show {
+           background-color: $blue;
+
+         }
+       }
+     }
+   }
+
+   &.menu-horizontal {
+
+     .subMenu {
+       width: 100%;
+       position: relative;
+       margin: 0 5px;
+       background-color: white;
+
+       .line {
+         background-color: transparent;
+         width: 60%;
+         height: 3px;
+         position: absolute;
+         right: 50%;
+         transform: translatex(50%);
+
+         &.show {
+           background-color: $blue;
+
+         }
+       }
+
+       &.active {}
+
+       .submenu-title {
+         background-color: white;
+         cursor: pointer;
+         display: flex;
+         justify-content: space-around;
+         align-items: center;
+         padding: 5px;
+         border-radius: 5px;
+
+         .title {
+           padding: 8px;
+
+           &:hover {
+             background-color: $gray-100;
+             border-radius: 5px;
+
+           }
+         }
+
+         &.show {
+           color: $blue;
+         }
+
+       }
+
+       .openItem {
+         width: 100%;
+         position: absolute;
+         top: 110%;
+         box-shadow: 1px 1px 4px 1px $gray-300;
+         border-radius: 5px;
+         z-index: 999;
+         background-color: white;
+         transform: rotateX(-90deg);
+         transform-origin: center top;
+         transition: transform 0.3s ease;
+         background-color: white;
+         user-select: none;
+
+         &.show {
+           transform: rotateX(0deg);
+
+         }
+
+         .menuItem {
+           height: 40px;
+
+           padding: 6px;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           cursor: pointer;
+
+           &.active {
+             color: $blue;
+           }
+
+           &:hover {
+             color: $blue;
+             background-color: $gray-100;
+           }
+
+           &.disabled {
+             cursor: no-drop;
+             color: $gray-300;
+             background-color: white;
+
+           }
+
+
+         }
+
+       }
+
+
+     }
+   }
+
+
+
+   &.menu-vertical {
+     flex-direction: column;
+
+     .subMenu {
+       width: 100%;
+
+       &.active {}
+
+       .submenu-title {
+         cursor: pointer;
+         background-color: white;
+         padding: 10px;
+
+         padding: 5px;
+         border-radius: 5px;
+
+         .title {
+           display: flex;
+           justify-content: space-around;
+           align-items: center;
+           padding: 8px;
+
+           &:hover {
+             background-color: $gray-100;
+             border-radius: 5px;
+             color: $blue;
+           }
+         }
+
+         &.show {
+           color: $blue;
+
+         }
+
+         .up {
+           transform: rotateX(180deg);
+           transition: 0.2s;
+
+           &.show {
+             transform: rotateX(360deg);
+           }
+         }
+
+       }
+
+
+       .openItem {
+         height: 0;
+         overflow: hidden;
+         transition: height 0.3s;
+         padding: 0 8px;
+         background-color: white;
+         user-select: none;
+
+         &.show {
+           height: calc(120px);
+         }
+
+         .menuItem {
+           background-color: white;
+           padding: 10px;
+           border-radius: 3px;
+           display: flex;
+           align-items: center;
+           height: 40px;
+           cursor: pointer;
+
+           &.active {
+             color: $blue;
+           }
+
+           &:hover {
+             background-color: $gray-200;
+             color: $blue;
+           }
+
+           &.disabled {
+             cursor: no-drop;
+             color: $gray-300;
+             background-color: white;
+
+             &:hover {
+               color: $gray-300;
+             }
+           }
+
+
+         }
+
+       }
+
+
+     }
+   }
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ // display：none到displayblock是没有过渡效果的，也就是说transform里的函数配合transition都没法用，display：none说是会使浏览器重绘，在display：none到display:block中先执行了transform里的动作，最后才显示display：block的，原因就是W3C渲染就是这样的。希望我理解的正确，有更好解释可以多多指教吧！
+ // 特殊的:在js中如果个给display：none加个延时 也是可以出现动画效果的

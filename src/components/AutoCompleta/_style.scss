@@ -1,0 +1,36 @@
+.lig-autoComplete {
+    position: relative;
+    .auto-inner {
+        width: 100%;
+         box-shadow: 1px 1px 4px 1px $gray-300;
+         position: absolute;
+         top: 110%;
+         border-radius: 5px;
+         z-index: 999;
+         transform: rotateX(-90deg);
+         transform-origin: center top;
+         transition: transform 0.3s ease;
+         background-color: rgb(255, 255, 255);
+        //  color: transparent;
+         &.show {
+           transform: rotateX(0deg);
+         }
+        .auto-option {
+            width: 100%;
+            height: 2rem;
+            display: flex;
+            align-items: center;
+            padding-left: 6px;
+            cursor: pointer;
+
+            &.auto-heightLight{
+                 background-color: rgba($color: $blue, $alpha: 1.0);
+                 color: white;
+            }
+        }
+
+
+    }
+
+
+}

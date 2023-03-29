@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "downlevelIteration": true,
+    "types": [
+      "node"
+    ],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react"
+  },
+  "include": [
+    "src",
+    ".ice","images.d.ts",
+    ".storybooks/config.tsx",
+    ".storybooks/webpack.config.js",
+    ".storybooks/config.tsx",
+    ".storybooks/webpack.config.js",
+    ".storybooks/config.tsx",
+    "tsconfig.build.json", "public/AutoCompleta.tsx",
+  ]
+}

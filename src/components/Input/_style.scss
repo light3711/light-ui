@@ -1,0 +1,139 @@
+$input-lg-width: 15rem;
+$input-sm-width: 5rem;
+$input-margin: 1rem;
+$input-radius: 0.3rem;
+$input-hover-border: 1.2px solid $blue;
+$input-border: 1.2px solid $gray-100;
+$input-border-transition: all 0.3s ease-in-out;
+
+
+.lig-input {
+    width: 100%;
+    position: relative;
+    display: inline-block;
+    background-color: $gray-100;
+    border-radius: $input-radius;
+
+    .input-wrapper {
+        border-radius: $input-radius;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+
+        .input-content {
+            position: relative;
+            padding: 0 8px;
+            width: 100%;
+            height: 100%;
+            border: $input-border;
+            border-radius: $input-radius;
+            display: flex;
+            align-items: center;
+            transition: 0.1s;
+
+            &.mode {
+                flex-wrap: wrap; // mode模式
+            }
+
+            &.pl-none {
+                padding-left: 0;
+            }
+
+            &.pr-none {
+                padding-right: 0;
+            }
+
+            &:hover {
+                cursor: text;
+            }
+
+            &.padding {
+                padding: 0 6px;
+            }
+
+            &.blur {
+                border: $input-border;
+                background-color: $gray-100;
+            }
+
+            &.rr-none {
+                border-right: 1.2px $gray-300 solid;
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+
+            &.rl-none {
+                border-left: 1.2px $gray-300 solid;
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+            }
+
+            &.focus {
+                border: $input-hover-border;
+                background-color: white;
+            }
+
+            &.button {
+                cursor: pointer;
+            }
+
+            .minput {
+                width: 100%;
+                height: 100%;
+                background-color: $gray-100;
+                border: none;
+                outline: none;
+                padding: 5px 0px;
+                border-radius: $input-radius;
+
+
+                &.focus {
+                    background-color: white;
+                }
+
+                &.button {
+                    cursor: pointer;
+                }
+
+            }
+        }
+    }
+
+    &.button {
+        cursor: pointer;
+    }
+
+}
+
+
+.input-prefix,
+
+.input-addAfter,
+.input-addBefore {
+    padding: 5px;
+    height: 100%;
+}
+
+
+.input-clear,
+.input-suffix {
+    position: absolute;
+    right: 0;
+    padding: 0 5px;
+}
+
+.input-addAfter,
+.input-addBefore {
+    background-color: $gray-100;
+}
+
+.input-faker {
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    border: none;
+    visibility: hidden;
+}

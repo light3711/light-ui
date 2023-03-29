@@ -1,0 +1,84 @@
+$colorMap:(
+'blue': $blue
+,'purple': $purple
+,'pink': $pink
+,'red': $red
+,'orange': $orange
+,'yellow': $yellow
+,'green': $green
+,'cyan': $cyan
+,'teal':$teal
+);
+
+.lig-tag{
+    width: fit-content;
+    border-radius: 2px;
+    background-color: white;
+    font-size: 0.8rem;
+    max-width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &.defaultColor{
+        background-color: $gray-100;
+        color: black;
+    }
+    @each $key, $v in $colorMap{
+        &.#{$key}{
+        background-color: rgba($color: $v, $alpha: 0.1);
+        color: $v;
+        // &.tag-border{
+        //     &.true{
+        //     border: 1px solid $v;
+        //     }
+        //     &.false{
+        //         border: none;
+        //     }
+        // }
+    }
+    
+    }
+    &.visible{
+        display: none;
+    }
+    &.mini{
+        font-size: 0.6rem;
+        font-weight: 500;
+    }
+    .tag-content{
+        padding: 1px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        div{
+            padding: 2px;
+        }
+        .tag-closebtn{
+            width: 10px;
+            font-size: 0.5rem;
+            cursor: pointer;
+            &:hover{
+                color: $gray-500;
+            }
+            @each $key, $v in $colorMap{
+                &.#{$key}{
+                color: rgba($color: $v, $alpha: 0.5);
+                &:hover{
+                    color:rgba($color: $v, $alpha: 1);
+                }
+            }
+            
+            }
+        }
+        .tag-icon{
+            font-size: 0.5rem;
+            // @each $key, $v in $colorMap{
+            //     &.#{$key}{
+            //     text-shadow: 1px 1px 1px 1px white;
+            // }
+            // }
+        }
+
+    }
+}

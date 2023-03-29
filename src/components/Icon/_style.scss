@@ -1,0 +1,22 @@
+@each $key, $val in $theme-colors {
+  .icon-#{$key} {
+    color: $val;
+  }
+}
+
+.SubIcon{
+ margin-left: 2px;
+ transition: 0.3s transform ease-in-out ;
+}
+
+.SubMenuOpen{
+  opacity: 1;
+}
+
+.storyIcon{
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  
+}
+

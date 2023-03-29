@@ -1,0 +1,78 @@
+.lig-transfer {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  
+  .t-control {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  
+    button {
+      margin: 5px;
+    }
+  }
+ 
+.t-content-wrapper {
+  width: 180px;
+  height: 220px;
+  border: solid $gray-200 1px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 20px;
+  position: relative;
+
+  .t-content-header-wrapper {
+    width: 100%;
+    background-color: $gray-200;
+    display: flex;
+    align-items: center;
+    padding-left: 7px;
+    flex-basis: 50px;
+    flex-shrink: 0;
+  }
+ 
+  .t-content {
+    width: 100%;
+    overflow: auto;
+    flex-grow: 1;
+    .t-content-item {
+      padding: 5px 3px;
+      margin: 2px 4px;
+      border-radius: 3px;
+    &:hover{
+        background-color: $gray-200;
+
+      }
+    }
+  }
+}
+
+}
+
+.noData{
+  margin: 8px 7px;
+}
+
+.t-content-header-control{
+  width: 100%;
+  position: relative;
+  .t-content-title{
+    font-size: 0.5rem;
+    color: $gray-500;
+    position: absolute;
+    right:6px;
+    top: 50%;
+    transform:translateY(-50%);
+  }
+}
+ 
+.transfer-pagination{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+}

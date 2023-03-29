@@ -1,0 +1,82 @@
+.lig-select {
+  
+  .select-wrapper{
+    position: relative;
+
+  }
+  .select-input {
+    cursor: pointer;
+    background-color: beige;
+    width: 100%;
+    height: 100%;
+  }
+
+  .select-list {
+    z-index: 999;
+    position: absolute;
+    top: 110%;
+    width: 100%;
+    background-color: #ffffff;
+    border: 1px $gray-200 solid;
+    border-radius: 0.2rem;
+    box-shadow: $box-shadow;
+    transform: rotateX(-90deg);
+    transform-origin: center top;
+    transition: transform 0.2s ease;
+    &.noChildren{
+      opacity: 0;
+    }
+
+    &.show {
+      transform: rotateX(0deg);
+
+    }
+
+    &.noBorder{
+      border-radius: 0;
+    }
+  }
+}
+.select-option {
+  padding: 5px 8px;
+  cursor: pointer;
+  z-index: 9999;
+  display: flex;
+  &.disabled {
+    cursor: no-drop;
+    color: $gray-200;
+  }
+
+  &.hoverColor {
+    background-color: $gray-200;
+  }
+}
+
+.select2 {
+  margin-top: 50px;
+}
+
+
+.select-checkbox {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 8px;
+
+  .lig-checkbox {
+    padding: 5px;
+    cursor: pointer;
+  }
+}
+
+.select-content{
+  display: flex;
+}
+
+.select-add{
+  background-color: $gray-100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 5px;
+}

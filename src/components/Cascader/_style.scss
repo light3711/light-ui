@@ -1,0 +1,56 @@
+ 
+.cascader-first{
+    position: relative;
+}
+
+
+.lig-cascader{
+    width: 300px;
+}
+
+.cascader-first{
+    border-radius: 5px;
+    padding: 2px;
+    display: flex;
+    align-items: center;
+    margin: 4px;
+    width: 100px;
+    transition: 0.2s;
+    justify-content: space-around;
+    user-select: none;
+    &.active{
+        background-color: $gray-200;
+    }
+    .first-value{
+        padding: 5px;
+    }
+    .first-icon{
+        margin-left: 3px;
+    }
+}
+ 
+.cascader-item-span{
+    user-select: none;
+    border-radius: 5px;
+    width: 100px;
+    padding: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 4px;
+    transition: 0.2s;
+ 
+    &.active{
+        background-color: $gray-200;
+    }
+    
+    
+    .first-value{
+        padding: 5px;
+    }
+    .first-icon{
+        margin-left: 3px;
+    }
+
+}
+ 
