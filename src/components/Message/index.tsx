@@ -1,2 +1,2 @@
-import {Message} from "./Message"
-export default Message
+import { createMessage } from "./Message"
+export default createMessage

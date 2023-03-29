@@ -7,20 +7,20 @@ export type ButtonType = 'primary' | 'danger' | 'link' | 'warning' | 'info'
 export type ButtonForm = 'round' | 'circle' | 'square'  
 interface BaseButtonProps  extends styleType,Pick<defaultType,'disabled'>{
     /**
-     * @size 按钮尺寸
+     *  按钮尺寸
      */
     size?: ButtonSize,
     /**
-     * @btnType 按钮类型
+     * 按钮类型
      */
     btnType?: ButtonType,
     children?: React.ReactNode
     /**
-     * @href link链接
+     *  link链接
      */
     href?: string
     /**
-     * @shape 按钮形状
+     *  按钮形状
      */
     shape?:ButtonForm
 }

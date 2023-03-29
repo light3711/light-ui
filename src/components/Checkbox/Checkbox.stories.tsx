@@ -42,7 +42,7 @@ const Template = (args: any) => {
   const [state, setState] = useState({ checked: false, context: {} })
   const [disabled, setDisabled] = useState(true);
   const [city, setCity] = useState([]);
-  const [w,setw] = useState([])
+  const [all,setAll] = useState([])
 
   useEffect(()=>{
     setCity(options)
@@ -54,17 +54,23 @@ const Template = (args: any) => {
     icon: !state.checked ? <Icon icon={'star'} /> : <Icon icon={'bicycle'} />,
     content: <span> {(!state.checked).toString()}</span>
   }
-
-  const onChange = (checked: any, context: any) => {
-     
-     
+  const onChange = (checked: any, e: any) => {
+     console.log(checked,e);
   }
+  const allChange = (checked: any, e: any) => {
+     if (checked) {
+     setAll(options.map((i)=>i.value))
+     }else{
+      setAll([])
+     }
+  }
+ 
 
   return (
     <>
 
       <Card title={'基础用法'}  >
-        <Checkbox onChange={onChange} value={true} >😋</Checkbox>
+        <Checkbox onChange={onChange}   >😋</Checkbox>
       </Card>
 
       <Card  title={RenderTitle('禁用多选框', 'disabled')}   >
@@ -80,6 +86,7 @@ const Template = (args: any) => {
       <Card title={RenderTitle('多选框组合', '<CheckBox.Group> & options')}      >
 
         <Checkbox.Group
+          
           direction={'horizontal'}
           onChange={onChange}
           options={options}
@@ -102,13 +109,14 @@ const Template = (args: any) => {
       <Card title={RenderTitle('复选框组合', '<CheckBox.Group> & options')}
         
       >
-        <Checkbox onChange={onChange} >全选</Checkbox>
+        <Checkbox onChange={allChange} >全选</Checkbox>
         <br />
         
         <Checkbox.Group
           direction={'horizontal'}
           onChange={onChange}
           options={options}
+          value={all}
         />
 
       </Card>

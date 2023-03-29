@@ -8,44 +8,47 @@ import { Option } from '../Select/Select'
 
 export interface PaginationProps extends styleType {
   /**
-   * @total 数据总量
+   *   数据总量
    */
   total?: number
   /**
-   * @count 展示页左右翼数量
+   *   展示页左右翼数量
    */
   count?: number
   /**
-   * @currentPage 初始页
+   *  初始页
    */
   currentPage?: number
   /**
-   * @onClick current点击回调 返回current
+   *   current点击回调 返回current
    */
   onClick?: (e: number) => void
   /**
-   * @inputJumper  input类型的跳转框
+   *    input类型的跳转框
    */
   inputJumper?: boolean
   /**
-   * @selectJumperOption select类型的跳转框
+   *   select类型的跳转框
    */
   selectJumperOption?: number[]
   /**
-   * @pageSize 每页数据量
+   *   每页数据量
    */
   pageSize?: number
+  /**
+   * 数据量选择器下拉option
+   */
   pageSelectOption?: number[]
   /**
-   * @mini 开启mini模式
+   *  开启mini模式
    */
   mini?: boolean
   /**
-   * @prevCLick 上一页点击回调 
+   *  上一页点击回调 
    */
   prevCLick?: (value: number) => void
   /**
-   * @nextCLick 下一页点击回调 
+   *  下一页点击回调 
    */
   nextCLick?: (value: number) => void
 }
@@ -67,10 +70,7 @@ export const Pagination = forwardRef((props: PaginationProps, ref) => {
 
 
   const createPage = (t, cur, aroud) => {
-    //出现省略号条件 total > baseCount - 2  展示内容 - prev next
-    /**
-     * @cur 展示页 
-     */
+ 
     let result = []
     let baseCount = aroud * 2 + 1 + 2 + 2 + 2 //   < 1 ... aroud 1 aroud ... 100 >
     let surplus = baseCount - 4

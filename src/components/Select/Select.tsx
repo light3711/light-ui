@@ -21,29 +21,29 @@ const SelectContext = createContext<{
 
 interface SelectProps extends styleType, InputTagProps, Omit<InputProps, 'prefix' | 'addBefore' | 'addAfter' | 'value'> {
   /**
-   * @option选项
+   * option选项
    */
   option?: any[]
   /**
-   * @children 自定义option
+   *   自定义option
    */
   children?: ReactNode[] | any
   /**
-   * @mode inputTag模式
+   *  inputTag模式
    */
   mode?: boolean
   defaultValue?: string
   /**
-   * @allowCreate 允许创建
+   *  允许创建
    */
   allowCreate?: boolean
   /**
-   * @listStyle 自定义展开菜单样式
+   *   自定义展开菜单样式
    */
   listStyle?: CSSProperties
   /**
    * 
-   * @onClose tag关闭回调
+   *  tag关闭回调
    */
   onClose?: (value: string) => void
   allowChange?: boolean
@@ -200,6 +200,7 @@ export const Select = (props: SelectProps) => {
                 onClear={onClear}
                 onClose={(e) => { onClose(e) }}
                 onKeyDowm={onKeyDowm}
+                tagColor={props.tagColor}
                 {...rest}
               ></InputTag>}
           </div>

@@ -14,31 +14,31 @@ interface TransferData  {
   title:string
 }
 /**
- * @title Transfer
+ *   Transfer
  */
 export interface TransferProps extends styleType, Pick<PaginationProps, 'total' | 'pageSize'> {
   /**
-   * @pagaintion 开启分页模式
+   *  开启分页模式
    */
   pagaintion?: boolean
   /**
-   * @sourceArray 左边源数据
+   *  左边源数据
    */
   dataSource?:TransferData[]
   /**
-   * @sourceBtn 自定义左边按钮
+   *  自定义左边按钮
    */
   sourceBtn?:any
   /**
-   * @targetBtn 自定义右边按钮
+   *   自定义右边按钮
    */
   targetBtn?:any
   /**
-   * @sourceTitle 自定义左边标题
+   *  自定义左边标题
    */
   sourceTitle?:any
   /**
-   * @targetTitle 自定义右边标题
+   *   自定义右边标题
    */
   targetTitle?:any
 }

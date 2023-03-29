@@ -8,17 +8,17 @@ export interface MessageProps {
   className?: string,
   top?: string,
   /**
-   * @MessageType message类型
+   *   message类型
    */
   MessageType?: MessageType,
   icon?: any,
   /**
-   * @duration 消失时间
+   * 消失时间
    */
   duration?: number,
   /**
-     * @content message内容
-     */
+   *   message内容
+  */
   content?: ReactNode
 }
 

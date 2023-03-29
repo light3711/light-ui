@@ -3,12 +3,8 @@ import '../../style/index.scss'
 import { Card } from "../Card/card";
 import Icon from "../Icon";
 import Input from "./Input";
-import { withInfo } from '@storybook/addon-info'
-import { addDecorator, addParameters } from '@storybook/react'
-import { createMessage, MessageProps } from "../Message/Message";
 import Select from "../Select";
 import { Option } from "../Select/Select";
-import Tag from "../Tag/Tag";
 import { RenderTitle } from "../../utils/renterTitle";
 
 export default {

@@ -5,7 +5,7 @@ import { defaultType, styleType } from '../../utils/type'
 
 export interface BackTopProps extends styleType,Pick<defaultType,'onClick'|'children'>{
   /**
-   * @visibilityHight 滚动到此参数值才会出现BackTop
+   *  滚动到此参数值才会出现BackTop
    */
   visibilityHight?:number  
 }

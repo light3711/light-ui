@@ -21,43 +21,43 @@ export interface TagProps  {
    */
   allowClose?:boolean
   /**
-   * @zh 设置标签背景颜色
+   *  设置标签背景颜色
    */
   color?: ligDesignColor;
   /**
-   * @zh 是否显示边框
+   *  是否显示边框
    */
   border?: Boolean;
   /**
-   * @zh 设置标签显示隐藏
+   *  设置标签显示隐藏
    */
   visible?: boolean;
   /**
-   * @zh 是否可关闭标签
+   *  是否可关闭标签
    */
   closable?: boolean;
   /**
-   * @zh 是否支持选中
+   *  是否支持选中
    */
   checkable?: boolean;
   /**
-   * @zh 是否默认选中
+   *   是否默认选中
    */
   defaultChecked?: boolean;
   /**
-   * @zh 是否选中（受控模式）
+   *  是否选中（受控模式）
    */
   checked?: boolean;
   /**
-   * @zh 设置图标
+   *   设置图标
    */
   icon?: ReactNode;
   /**
-   * @zh 关闭标签回调函数
+   *  关闭标签回调函数
    */
   onClose?: (e,children) => Promise<any> | void;
   /**
-   * @zh 选中的回调
+   *   选中的回调
    */
   onCheck?: (checked: boolean) => void;
 }

@@ -29,10 +29,10 @@ const content: MessageProps = {
   icon: <Icon color="#af6504 " icon={'coffee'} ></Icon>,
   content: <span>coffee</span>
 }
-const type : MessageType[] = ['warning','danger','success','info']
-const duration : number[] = [1000,3000,5000]
+const type: MessageType[] = ['warning', 'danger', 'success', 'info']
+const duration: number[] = [1000, 3000, 5000]
 
-const nData = type.map((item)=>{
+const nData = type.map((item) => {
   return {
     className: 'coffect',
     top: '20px',
@@ -41,55 +41,67 @@ const nData = type.map((item)=>{
     content: <span>{item}</span>
   }
 })
-const dData = duration.map((item)=>{
+const dData = duration.map((item) => {
   return {
     className: 'coffect',
     top: '20px',
     duration: item,
     content: <span>{item}</span>,
-  icon: <Icon color="#5b10e7 " icon={'bicycle'} ></Icon>
-    
+    icon: <Icon color="#5b10e7 " icon={'bicycle'} ></Icon>
+
   }
 })
 
 const Template = (args: any) => {
 
+
   return (
     <div  >
-      <Card title={RenderTitle('基础用法','createMessage( )(item)')}  >  
-      {
-       <Button
-        style={{marginRight:'30px'}}
-        onClick={() => createMessage()(content)}>Message
-        </Button> 
-      }
+     
+      <Card title={RenderTitle('基础用法', 'createMessage( )(item)')}  >
+        {
+          <Button
+            style={{ marginRight: '30px' }}
+            onClick={() => createMessage()(content)}>Message
+          </Button>
+        }
       </Card>
-      <Card title={RenderTitle('四种不同状态','content.MessageType : warning | danger | success | info ')}  >  
-       
-      {
-        nData.map((item)=><Button
-        style={{marginRight:'30px'}}
-        btnType={item.MessageType as ButtonType} onClick={() => createMessage()(item)}>
-          {item.content}
-        </Button>)
-      }
-      </Card>
-      <Card title={RenderTitle('自定义Icon','content.icon')}  >  
-      {
-       <Button
-        style={{marginRight:'30px'}}
-        onClick={() => createMessage()(content)}>coffee
-        </Button> 
-      }
-      </Card>
-      <Card title={RenderTitle('设置持续时间','content.duration')}  >  
-        
-        {dData.map((item)=><Button
-        style={{marginRight:'30px'}}
-        onClick={() => createMessage()(item)}>{item.duration}
-        </Button> )}
-      </Card>
+      <Card title={RenderTitle('四种不同状态', 'content.MessageType : warning | danger | success | info ')}  >
 
+        {
+          nData.map((item) => <Button
+            style={{ marginRight: '30px' }}
+            btnType={item.MessageType as ButtonType} onClick={() => createMessage()(item)}>
+            {item.content}
+          </Button>)
+        }
+      </Card>
+      <Card title={RenderTitle('自定义Icon', 'content.icon')}  >
+        {
+          <Button
+            style={{ marginRight: '30px' }}
+            onClick={() => createMessage()(content)}>coffee
+          </Button>
+        }
+      </Card>
+      <Card title={RenderTitle('设置持续时间', 'content.duration')}  >
+
+        {dData.map((item) => <Button
+          style={{ marginRight: '30px' }}
+          onClick={() => createMessage()(item)}>{item.duration}
+        </Button>)}
+      </Card>
+      <div style={{ width: '100%', backgroundColor: '#f6f7f8', height: 'fit-content'
+      ,fontSize:'13px',fontWeight:'400',padding:'13px',color:'#1849ec ' }} >
+        所需数据 :<br /> 
+        const content: MessageProps = {'{'}<br />
+        className: 'coffect',<br />
+        top: '20px',<br />
+        duration: 3000,<br />
+        icon: <Icon color="#af6504 " icon={'coffee'} ></Icon>,<br />
+        content: <span>'coffee'</span>{'}'}
+
+      </div>
     </div>
   )
 }

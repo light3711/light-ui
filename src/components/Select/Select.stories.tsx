@@ -129,7 +129,7 @@ const Template = (args: any) => {
         </Select>
       </Card>
 
-      <Card title={RenderTitle('结合InputTag使用','mode模式')} style={{width:'400px'}}>
+      <Card title={RenderTitle('结合InputTag使用','mode模式')} style={{height:'300px'}}>
         <Select mode allowClear allowCreate option={selectData} >
           {SelectData.map((option, index) => {
             return <Option key={option.value}

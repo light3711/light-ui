@@ -1,40 +1,40 @@
 import { useState } from "react";
-import React, {  FC, useEffect } from "react";
+import React, { FC, useEffect } from "react";
 import classNames from "classnames";
 import Icon from "../Icon";
 import { styleType } from "../../utils/type";
 
 interface CarouselProps extends styleType {
     /**
-     * @step 间隔时间
+     * 间隔时间
      */
     step?: number,
     animationStep?: number
     children: any
     /**
-     * @autoplay 自动播放
+     *   自动播放
      */
     autoplay?: boolean
     /**
-     * @dots 是否开启导航点
+     *  是否开启导航点
      */
     dots?: boolean
     /**
-     * @link 链接数组
+     *   链接数组
      */
     link?: string[]
     /**
-     * @btnDirection 开启左右控制点
+     *  开启左右控制点
      */
     btnDirection?: boolean
     /**
-     * @nextChange next控制按钮事件
+     *   next控制按钮事件
      */
-    nextChange?:Function
+    nextChange?: Function
     /**
-     * @prevChange prev控制按钮事件
+     * prev控制按钮事件
      */
-    prevChange?:Function
+    prevChange?: Function
 }
 
 
@@ -49,18 +49,18 @@ interface CarouselProps extends styleType {
 
 export const Carousel: FC<CarouselProps> = (props) => {
 
-    const { step = 3000, animationStep = 1, children, link, className, dots = true, autoplay = true, btnDirection,prevChange,nextChange } = props
+    const { step = 3000, animationStep = 1, children, link, className, dots = true, autoplay = true, btnDirection, prevChange, nextChange } = props
     const [current, setCurrent] = useState(0)
     const [animationSteps, setAnstep] = useState(1)
     const [steps, setSteps] = useState(step)
     const carouselcx = classNames('lig-carousel', className, {})
     var timeId: NodeJS.Timeout
-    
-    const _children = props.children ? props.children : 
-    [<div className='carouselImg' >1</div>,
-    <div className='carouselImg' >2</div>,
-    <div className='carouselImg' >3</div>,
-    <div className='carouselImg' >4</div>]
+
+    const _children = props.children ? props.children :
+        [<div className='carouselImg' >1</div>,
+        <div className='carouselImg' >2</div>,
+        <div className='carouselImg' >3</div>,
+        <div className='carouselImg' >4</div>]
 
 
     useEffect(() => {
@@ -79,7 +79,7 @@ export const Carousel: FC<CarouselProps> = (props) => {
             direction = -1;
         }
         if (_children) {
-            if (current % ( _children.length + 1) !== _children.length && current >= 0) {
+            if (current % (_children.length + 1) !== _children.length && current >= 0) {
 
                 step && setSteps(step)
                 setCurrent(current + direction)
@@ -96,16 +96,16 @@ export const Carousel: FC<CarouselProps> = (props) => {
     const nulls = () => { }
 
     const handleTransitionEnd = () => {
-       if (_children) {
-        if (current % (_children.length + 1) === _children.length) {
-            setAnstep(0)
-            setSteps(step - (animationStep * 1000))
-            setCurrent(0)
-        } else if (current < 0) {
-            setAnstep(0)
-            setCurrent(_children.length - 1)
+        if (_children) {
+            if (current % (_children.length + 1) === _children.length) {
+                setAnstep(0)
+                setSteps(step - (animationStep * 1000))
+                setCurrent(0)
+            } else if (current < 0) {
+                setAnstep(0)
+                setCurrent(_children.length - 1)
+            }
         }
-       }
     }
 
     const getActive = (index: number) => {
@@ -187,12 +187,12 @@ export const Carousel: FC<CarouselProps> = (props) => {
             {
                 btnDirection && <div className="btn-container">
                     <div className="btn-direction pre" style={{ color: 'white' }} onClick={preClick}>
-                      <Icon icon={'angle-left'}></Icon>
-                        </div>
+                        <Icon icon={'angle-left'}></Icon>
+                    </div>
                     <div className="btn-direction next" style={{ color: 'white' }} onClick={nextClick}>
-                      <Icon icon={'angle-right'}></Icon>
-                        
-                        </div>
+                        <Icon icon={'angle-right'}></Icon>
+
+                    </div>
                 </div>
             }
 
@@ -202,7 +202,7 @@ export const Carousel: FC<CarouselProps> = (props) => {
     )
 }
 
-Carousel.defaultProps={
-    btnDirection:true
+Carousel.defaultProps = {
+    btnDirection: true
 
 }

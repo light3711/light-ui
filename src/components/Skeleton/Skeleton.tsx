@@ -5,16 +5,16 @@ import { styleType } from '../../utils/type';
  
 export interface SkeletonProps extends styleType {
   /**
-   * @row 条目数量
+   *  条目数量
    */
     row?:number
     /**
-     * @width 条目宽度
+     *  条目宽度
      */
     width?:Array<number | string>
     img?:boolean
     /**
-     * @loading 开关
+     *   开关
      */
     loading?:boolean
 }

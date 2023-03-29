@@ -5,15 +5,15 @@ import Icon from '../Icon'
 
 export interface RatateProp extends styleType, Pick<defaultType, 'children' | 'onClick'> {
   /**
-   * @count 总分
+   *  总分
    */
   count?: number
   /**
-   * @value 当前分数
+   *  当前分数
    */
   value?: number
   /**
-   * @readOnly 只读模式
+   *  只读模式
    */
   readOnly?: boolean
 }

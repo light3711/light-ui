@@ -8,10 +8,15 @@ export type MenuType = 'horizontal ' | 'vertical'
 
 
 export interface MenuProps extends styleType,Pick<defaultType,'onClick'>{
+    /**
+     *  菜单类型
+     */
     type?:MenuType
-    childent ?: React.ReactNode
-    defaultIndex ?: string
-    defalutOpenSubMenu?:string[]
+    // defaultIndex ?: string
+    // defalutOpenSubMenu?:string[]
+    /**
+     * icon 
+     */
     icon?:any
 }
 
@@ -23,7 +28,7 @@ interface MyMenuContext {
     icon?:any
 }
 
-export const MenuContext = createContext<MyMenuContext>({index:'0'}) //默认值是0
+export const MenuContext = createContext<MyMenuContext>({index:'0'}) 
 /**
  * 收纳、排列并展示一系列选项的列表。
  * ### 引用方法
@@ -34,7 +39,7 @@ export const MenuContext = createContext<MyMenuContext>({index:'0'}) //默认值
  */
 export const Menu : React.FC<MenuProps>=(props) => {
     
-    const {type,className,onClick,children,defalutOpenSubMenu,style} = props
+    const {type,className,onClick,children,style} = props
     const [currentActive,setActive] = useState('') 
     const cx = classNames('lig-menu',className,{
         [`menu-${type}`] : type,   
@@ -49,7 +54,7 @@ export const Menu : React.FC<MenuProps>=(props) => {
         index : currentActive ? currentActive : '0' 
         ,itemClick : handleClick 
         ,type:type
-        ,defalutOpenSubMenu:defalutOpenSubMenu
+        // ,defalutOpenSubMenu:defalutOpenSubMenu
     }
 
     const renderChilden = ()=>{
@@ -64,7 +69,7 @@ export const Menu : React.FC<MenuProps>=(props) => {
                 return React.cloneElement(childrenElement,{
                     index:index.toString(),
                     className:'onlyMenuItem'
-                }) //cloneElement 为每一个childrenElement添加index属性
+                })  
 
             }
             if (displayName==='SubMenu' ) {
@@ -91,9 +96,7 @@ export const Menu : React.FC<MenuProps>=(props) => {
 }
 
 Menu.defaultProps={
-    defaultIndex:'0',
     type:'horizontal ',
-    defalutOpenSubMenu:[]
 }
 
 export default Menu

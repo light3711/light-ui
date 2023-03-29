@@ -6,7 +6,7 @@ import { Imgcontrol } from './imgcontrol'
 
 export interface ImgProps extends styleType {
   /**
-   * @scr 图片数据
+   *  图片数据
    */
   src?:{id:number,src:string}[]
   onClose?:Function

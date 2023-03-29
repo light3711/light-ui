@@ -23,7 +23,7 @@ export interface UploadProps extends styleType {
     data?:{[key:string]:any}
     withCredentials?:boolean
     /**
-     * @accept 限定文件类型
+     *  限定文件类型
      */
     accept?:string
     progressStyle?:CSSProperties

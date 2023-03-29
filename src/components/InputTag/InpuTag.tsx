@@ -8,32 +8,32 @@ import Tag, { ligDesignColor } from '../Tag/Tag';
 
 export interface InputTagProps extends styleType,Omit<InputProps,'value'> {
   /**
-   * @tagColor tag色板颜色
+   *   tag色板颜色
    */
   tagColor?: ligDesignColor
    
   /**
-   * @value inputValue
+   *   inputValue
    */
   inputValue?: string
   /**
-   * @value 渲染tag的value数组
+   *   渲染tag的value数组
    */
   value?: string[] | string
   /**
-   * @checked inputChecked
+   *   inputChecked
    */
   checked?: boolean
   /**
-   * @placeholder input placeholder
+   *   输入框 placeholder
    */
   placeholder?: string
   /**
-   * @onClose tag的关闭回调 
+   *  tag的关闭回调 
    */
   onClose?:Function
   /**
-   * @renderTag 自定义render内容 
+   *   自定义render内容 
    */
   renderTag?:(onClose:Function,inputElement:ReactNode | ReactNode[],value)=> ReactNode  
   onKeyDowm?:Function
@@ -114,6 +114,7 @@ export const InputTag = (props: InputTagProps) => {
               <Tag
                 onClose={(e, c) => onClose(e, item)}
                 key={item} children={item}
+                color={props.color && props.color as ligDesignColor}
                 style={{
                   color:'black',
                   backgroundColor: checked ? '#ecf2f7' : 'white',

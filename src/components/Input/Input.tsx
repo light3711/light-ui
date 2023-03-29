@@ -12,81 +12,77 @@ type inputType = 'password' | 'text'
 export interface InputProps extends styleType, Omit<InputHTMLAttributes<HTMLElement>,
     'onKeyDown' | 'onFocus' | 'size' | 'maxLength' | 'onChange' | 'onBlur'> {
     /**
-     * @value 受控值
+     *  受控值
      */
     value?: string | string[] | number
     /**
-     * @size 尺寸
-     */
-    /**
-     * @type
+     * 输入框类型
      */
     type?: inputType
-    size?: inputSize
     /**
-     * @icon 图标
+     *   图标
      */
     icon?: any
     /**
-     * @onChange 回调事件
+     *  回调事件
      */
     onChange?: (value: string | string[] | number, e?: Element, focus?: boolean) => void
     /**
-     * @iconClick 图标回调
+     *  图标回调
      */
     iconClick?: () => void
     /**
-     * @onPressEnter 回车回调 
+     *   回车回调 
      */
     onPressEnter?: () => void
     /**
-     * @prefix 前缀
+     *  前缀
      */
     prefix?: any
     /**
-     * @suffix 后缀
+     *  后缀
      */
     suffix?: any
     /**
-    * @addBefore 输入框前添加元素
+    *   输入框前添加元素
     */
     addBefore?: ReactNode;
     /**
-     * @addAfter 输入框后添加元素
+     *  输入框后添加元素
      */
     addAfter?: ReactNode;
     /**
-    * @beforeStyle 输入框前添加元素的样式
+    *   输入框前添加元素的样式
     */
     beforeStyle?: object;
     /**
-     * @afterStyle 输入框后添加元素的样式
+     *   输入框后添加元素的样式
      */
     afterStyle?: object;
     /**
-     * @allowClear 是否需要清除功能
+     *   是否需要清除功能
      */
     allowClear?: boolean
     /**
-     * @onClear 清除回调
+     *   清除回调
      */
     onClear?: (value?: string | string[], e?: any) => void
     /**
-     * @pointerEventFocus select组件专用
+     *   select组件专用
      */
     pointerEventFocus?: boolean,
     /**
-     * @onKeyDown 键盘回调
+     *   键盘回调
      */
     onKeyDown?: (e) => void,
     /**
-     * @mode inputTag模式
+     *  inputTag模式
      */
     mode?: any
     inputCallback?: (current: HTMLInputElement) => void
     /**
      * 
-     *  @onBlur 失焦回调
+     *   失焦回调
      *  
      */
     onBlur?: (value) => void
@@ -105,7 +101,7 @@ export interface InputProps extends styleType, Omit<InputHTMLAttributes<HTMLElem
  
 export const Input: FC<InputProps> = (props) => {
 
-    const { disabled, className, size, icon, style,
+    const { disabled, className,   icon, style,
         type = 'text',
         iconClick,
         onProgress,
@@ -129,7 +125,6 @@ export const Input: FC<InputProps> = (props) => {
     const [width, setWidth] = useState('')
 
     const cx = classNames('lig-input', className, {
-        size: props.size,
         'disabled': disabled,
         'button': props.pointerEventFocus
     })

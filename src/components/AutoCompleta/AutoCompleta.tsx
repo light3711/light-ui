@@ -9,12 +9,12 @@ import useOnClickOutside from "../../hooks/useOnclickOutside";
 export interface AutoCompleteProps extends Omit<InputProps, 'onSelect'> {
     /**
      * 
-     * @fetchSuggestion 异步结果
+     *   异步结果
      */
     fetchSuggestion?: (str: string) => DataSourceType[] | Promise<DataSourceType[]>
     onSelect?: (item: DataSourceType) => void
     /**
-     * @dataSource 数据源
+     *  数据源
      */
     dataSource?: any[]
 }

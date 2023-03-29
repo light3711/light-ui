@@ -39,7 +39,6 @@ const renderTag = (onClose: any, inputElement, value: any) => {
 }
 
 
-
 const Template = (args: any) => {
 
   const [newValue, setValue] = useState(null)
@@ -51,12 +50,12 @@ const Template = (args: any) => {
 
   function clear (){
     setD([])
-
   }
 
-  function checkboxChange(value,event){
+  function checkboxChange(value){
     setD(value)
   }
+ 
   const checkoptions = [
     {
       label: 'option 1',
@@ -91,6 +90,7 @@ const Template = (args: any) => {
       <Card title={RenderTitle('获取节点value', 'onChange(value, e, focus)')}   >
         <InputTag tagColor={'blue'} style={{ width: '400px' }} />
       </Card>
+
       <Card title={RenderTitle('组合使用')} style={{height:'300px'}}  >
         <Select
           allowClear
@@ -100,11 +100,11 @@ const Template = (args: any) => {
           onClear={() => clear()}
           onClose={(e) => checkClear(e)}
         >
-          <Checkbox.Group className={'select-checkbox'} onChange={(v, e) => { checkboxChange(v, e) }} value={d} options={checkoptions}>
-          </Checkbox.Group>
+          <Checkbox.Group className={'select-checkbox'}
+           onChange={checkboxChange} value={d} options={checkoptions}/>
         </Select>
       </Card>
-
+ 
     </div>
   )
 }

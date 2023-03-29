@@ -17,12 +17,12 @@ interface CarcaderData {
 
 interface CarcaderProps extends styleType, Pick<InputProps, 'placeholder' | 'onChange' | 'allowClear'> {
   /**
-   * @dataSource 数据源
+   *  数据源
    */
   dataSource?: CarcaderData[]
   disabled?: boolean
   /**
-   * @inputTag 开启inputTag模式
+   *  开启inputTag模式
    */
   inputTag?: boolean
 }
