@@ -111,8 +111,7 @@ function Group(props: GroupProps) {
 
   const [gValue, setgroupValue] = useState([]);
 
-
-  //这个checkChange其实是每个单选带回来的值
+ 
   const checkChange = (value, checked: boolean) => {
 
     if (checked && !gValue.includes(value)) {
